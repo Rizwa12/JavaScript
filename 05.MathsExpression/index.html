@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Maths expressions:
+        Familar Operators
+
+    </h1>
+    <h2>Percentage Calculator:</h2>
+    <form onsubmit="calculate(); return  false">
+        <label for ="totalMarks">Total Marks</label>
+        <input type = "number" min = "1" required id = "totalMarks" placeholder="Enter Your total marks">
+        <br>
+        <label for = "Marksobtained">Marks Obtained</label>
+        <input type="number"  min = "1"  required id = "Marksobtained" placeholder="Enter Your Obtained Marks">
+        <br>
+        <button type = "submit">Calculator</button>
+
+
+    </form>
+    <h1 id ="result"></h1>
+    <script>
+        //hard coded variable
+        // let totalmarks = 1000; //hard coded variable
+        // let marksobtained = 800;//hard coded variable
+        // let number_of_subject=10;
+        // let percentage = marksobtained*100/totalmarks;
+        // console.log(percentage);
+        // alert(percentage);
+        
+        //let totmarks=prompt("enter total marks");
+        // alert("enter total marks"); //problem
+        // prompt(totmarks);
+       // let marksobtain=prompt("enter marks obtained");
+        //let percentage=marksobtain * 100 / totmarks;
+        //alert(percentage + "%");
+        
+        function calculate()
+        {
+            let totalMarks = document.querySelector("#totalMarks").value;
+            let marksobtain = document.querySelector("#Marksobtained").value;
+            let percentage = marksobtain*100/totalMarks;
+            // alert(percentage +"%");
+            // document.querySelector("#result").innerHTML = "you have got " +percentage + "%"; es5 //old method
+            document.querySelector("#result").innerHTML = `you have got ${percentage}%`; //es6
+        }
+    </script>
+</body>
+</html>
