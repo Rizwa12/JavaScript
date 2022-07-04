@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Average Calculator:</h2>
+    <form onsubmit="calculate(); return false;">
+        <label for = "p_marks">C/C++:</label>
+       
+        <input type="number" required id = "p_marks" placeholder="Enter the Marks of C/C++">
+        <br>
+        <br>
+        <label for = "d_marks">Data Structure:</label>
+        
+        <input type="number" required  id = "d_marks"  placeholder="Enter the Marks of DS">
+        <br>
+        <br>
+      <label for = "DM">Data DataMining:</label>
+       
+        <input type="number" required id = "DM" placeholder="Enter the Marks of DataMining">
+        <br>
+        <br>  
+         <label for = "j_marks">Java</label>
+        
+        <input type="number" required id = "j_marks" placeholder="Enter the Marks of Java">
+        <br>
+        <br>
+         <label for = "php_marks">PHP</label>
+       
+        <input type="number" required id = "php_marks" placeholder="Enter the Marks of PHP">
+        <br>
+        <br>
+         <label for = "Algo_marks">Algorithm</label>
+        
+        <input type="number" required id = "Algo_marks" placeholder="Enter the Marks of Algorithm">
+        <br>
+        <br>
+        <label for = "NN_marks">Neural Network</label>
+        
+        <input type="number" required id = "NN_marks" placeholder="Enter the Marks of NN">
+        <br>
+        <br>
+         <label for = "DB_marks">Data Base</label>
+       
+        <input type="number" required id = "DB_marks" placeholder="Enter DataBase Marks">
+        <br>
+        <br>
+         <label for = "OS_marks">Operating System</label>
+       
+        <input type="number" required id = "OS_marks" placeholder="Enter Operating System Marks">
+        <br>
+        <br>
+        <label for = "ML_marks">MachineLearning</label>
+        
+        <input type="number" required id = "ML_marks" placeholder="Enter MachineLearning Marks">
+        <br>
+        <br>      
+        <button type="submit">Calculate</button>
+    </form>
+    <h1 id = sum></h1>
+    <h1 id = "average"></h1>
+    <script>
+        function calculate()
+        {
+            let p_marks = document.querySelector("#p_marks").value;
+            let d_marks = document.querySelector("#d_marks").value;
+             let DM = document.querySelector("#DM").value;
+             let j_marks = document.querySelector("#j_marks").value;
+             let php_marks = document.querySelector("#php_marks").value;
+             let Algo_marks = document.querySelector("#Algo_marks").value;
+             let NN_marks = document.querySelector("#NN_marks").value;
+             let DB_marks = document.querySelector("#DB_marks").value;
+             let OS_marks = document.querySelector("#OS_marks").value;
+            let ML_marks = document.querySelector("#ML_marks").value;
+        
+             let sum = parseInt(p_marks) +  parseInt(d_marks)+parseInt(DM) + parseInt(j_marks)+parseInt(php_marks) 
+             +parseInt(Algo_marks)+parseInt(NN_marks) + parseInt(DB_marks)+parseInt(OS_marks)+parseInt(ML_marks);
+            document.querySelector("#sum").innerHTML = "you have got obtained Marks " + sum + "%";
+             let average = sum / 10;
+             document.querySelector("#average").innerHTML = `you have got Average ${average}%`;
+
+        }
+
+    </script>
+</body>
+</html>
