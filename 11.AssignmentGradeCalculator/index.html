@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator in Java Script</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            text-decoration: none;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+             background: linear-gradient(217deg, rgba(255,0,0,.8),rgba(255,0,0,0) 70.71%),
+            linear-gradient(127deg,rgba(0,255,0,.8),rgba(0,255,0,0) 50%),
+             linear-gradient(336deg,rgba(0,0,255,.8),rgba(0,0,255,0) 70.71%);   
+          
+        }
+        .text > h1{
+            margin-left: -295px;
+            font-size: 60px;
+            color: #f0e7e5;
+            position: fixed; 
+            margin-top: -320px;
+           
+        }
+        .calc-body{
+            background: radial-gradient(rgba(255,255,255,0.09),
+            rgba(255,255,255,0.9));
+            border-radius: 20px;
+            width:45vw;
+            height: 70vh;
+
+        }
+        .result{
+            position: absolute;
+            border-bottom-left-radius: 20px;
+            border-top-left-radius: 20px;
+            height: 70vh;
+            width: 20vw;
+            background: radial-gradient(rgba(0,0,0,0.05),rgba(255,255,255,0.5));
+        }
+        .result>h1{
+            font-size: 35px;
+            margin: 40px 0;
+            text-align: center;
+
+        }
+        h2{
+            font-size: 25px;
+            margin:10px 10px;
+        }
+        .show{
+    margin-top: 85px;
+}
+.inp{
+    text-align: center;
+   
+  
+align-items: center;
+    justify-content: center;
+    width: 60vw ;
+    height: 70vh;
+    display: flex;
+}
+
+
+ input{
+
+    font-weight: 880;
+    border-radius: 10px;
+     margin: 15px; 
+    height: 5px;
+    padding: 20px;
+    border: none;
+    outline: none;
+    font-size: 10px;
+    border: 1px solid rgb(223, 217, 217);
+    background: rgba(0, 0, 0, 0.05);
+  
+} 
+button{
+    margin-top: 20px;
+    height: 45px;
+    width: 200px;
+    font-weight: 650;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(223, 217, 217);
+    outline: none;
+    font-size: 20px;
+    border-radius: 30px;
+    
+
+}
+.result-show{
+    text-align: center;
+    height: 50px;
+    width: 50vw;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 460px;
+    background-color: aqua;
+}
+
+.main{
+    margin-left: 45px;
+}
+h3{
+    font-size: 22px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: -5px;
+}
+    </style>
+</head>
+<body>  
+    <div class="text">
+        <h1>Student Grade Calculator</h1>
+    </div>  
+    <div class="calc-body">
+        <div class="result">
+            <h1>Result</h1>
+            <div class="show"> 
+                <h2>Total:<span id ="total"></span></h2>
+                <br>
+                <h2>Percentage:<span id="percentage"></span></h2>
+                <br>
+                <h2>Grade:<span id="grade"></span></h2>
+                
+            </div>
+        </div>
+        
+        <div class="inp">
+            <div class="main">
+        
+                    <form onsubmit="calculate(); return false;">
+                        <label for="maths">Maths:</label>
+                        <br>
+                    <input type="number" required id ="maths" placeholder="Maths">
+                    <br>
+                    <label for="physics">Physics:</label>
+                    <br>
+                <input type="number" required id ="physics" placeholder="Physics">
+                <br>
+                <label for="computer">Computer:</label>
+                    <br>
+                <input type="number" required id ="computer" placeholder="Computer">
+                <br>
+                <button type="submit">Calculate Result</button>
+                </form>
+                <h3 id ="message"></h3>
+            </div>
+            
+        </div>
+        
+    </div>  
+</body>
+<script>
+    function calculate()
+    {
+        let maths = document.querySelector("#maths").value;
+        let physics = document.querySelector("#physics").value;
+        let computer = document.querySelector("#computer").value;
+        let total = parseFloat(maths)+parseFloat(physics)+parseFloat(computer);
+        let percentage = (total*100)/300;
+        if(percentage>=90&&percentage<100)
+        {
+            document.querySelector("#grade").innerHTML = "A+";
+
+        }
+        else if(percentage>=80&&percentage<90)
+        {
+            document.querySelector("#grade").innerHTML="A";
+        }
+        else if(percentage>=70&&percentage<80)
+        {
+            document.querySelector("#grade").innerHTML = "B+";
+        }
+        else if(percentage>=60 && percentage<70)
+        {
+            document.querySelector("grade").innerHTML="B";
+        }
+        else if(percentage>=50&&percentage<60)
+        {
+            document.querySelector("#grade").innerHTML="C";
+        }
+        else if(percentage>=40&&percentage<50)
+        {
+            document.querySelector("#grade").innerHTML= "D";
+        }
+        else if(percentage>=33&&percentage<40)
+        {
+            document.querySelector("#grade").innerHTML = "E";
+        }
+        else{
+            document.querySelector("#grade").innerHTML = "F";
+        }
+        document.querySelector("#percentage").innerHTML = percentage;
+        document.querySelector("#total").innerHTML = total;
+        if(percentage>=33)
+        {
+            document.querySelector("#message").innerHTML = "Congratulation you have passed";
+        }
+        else
+        {
+            document.querySelector("#message").innerHTML = "Sorry You are failed";
+        }
+    }
+</script>
+</html>

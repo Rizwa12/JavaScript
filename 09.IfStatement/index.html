@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Condition Checking with if statement</h1>
+    <h2>Temperature App</h2>
+    <form onsubmit="conditioncheck(); return false">
+        <label for ="temp">Temperature</label>
+        <input type="number" id ="temp">
+        <input type="submit" value="check">
+    </form>
+    <p id ="result"></p>
+    <script>
+        let a = 10;
+        let name  = "turk";
+        let iseven = true ; //boolean type variable before boolean variable is comes must
+        //let temp = 10;
+        //temperature app
+        // let temp = prompt("enter the temperature");
+        // if(temp > 30)
+        // {
+        //     console.log("its too hot");
+        //     console.log("i am inside body");
+        // }
+        // if(temp<10){
+        //     console.log("it to cold");
+        // }
+       
+        // if("car")
+        // {
+        //     console.log("Inside body of if ");
+        // }
+        // if(0) //falsy value
+        // {
+        //     console.log("falsey value");
+
+        // }
+        // if("") //falsy value
+        // {
+        //     console.log("checking");
+        // }
+        // if(-4)
+        // {
+        //     console.log("hello");
+        // }
+        function conditioncheck()
+        {
+            let temp = document.querySelector("#temp").value;
+            if(temp>30)
+            {
+                //console.log("its too hot");
+                document.querySelector("#result")
+                .innerHTML = "its too hot"
+            }
+            else if(temp>25)
+            {
+                //console.log("its pleasent outside");
+                document.querySelector("#result")
+                .innerHTML="its pleasent outside";
+            }
+            else if(temp>10)
+            {
+                //console.log("probably you would need a jacket");
+                document.querySelector("#result")
+                .innerHTML = "probably you would need a jacket";
+            }
+            else 
+            {
+                //console.log("its frezzing outside");
+                document.querySelector("#result")
+                .innerHTML = "its freezing outside";
+            }
+             
+        }
+
+    </script>
+</body>
+</html>
