@@ -144,7 +144,7 @@ h3{
                     <form onsubmit="calculate(); return false;">
                         <label for="maths">Maths:</label>
                         <br>
-                    <input type="number" required id ="maths" placeholder="Maths">
+                    <input type="number"  min="1"  required id ="maths" placeholder="Maths">
                     <br>
                     <label for="physics">Physics:</label>
                     <br>
@@ -171,6 +171,7 @@ h3{
         let computer = document.querySelector("#computer").value;
         let total = parseFloat(maths)+parseFloat(physics)+parseFloat(computer);
         let percentage = (total*100)/300;
+       
         if(percentage>=90&&percentage<100)
         {
             document.querySelector("#grade").innerHTML = "A+";
@@ -213,6 +214,10 @@ h3{
         {
             document.querySelector("#message").innerHTML = "Sorry You are failed";
         }
+    if(maths>=100)
+       {
+        document.querySelector("#maths").innerHTML="please enter marks less than 100";
+       }
     }
 </script>
 </html>
