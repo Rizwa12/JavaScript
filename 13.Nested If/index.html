@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested If</title>
+   
+</head>
+<body>  
+    
+    <h1>Nested If statement</h1>
+    <script>
+        let userisactive = true;
+        let credit = 340;
+        if(userisactive)
+        {
+            if(credit>0)
+            {
+                console.log("you are welcome in the game");
+            }
+        }
+        let email ="abc@gmail.com"; //database store
+        let password = "1234";
+        let userinputemail = prompt("enter eamil to login");
+        let userinputpassword = prompt("enter the password");
+        if(userinputemail == email)
+        {
+            if(userinputpassword==password)
+            {
+                alert("login successfully");
+            }
+            else
+            {
+                alert("Password incorrect");
+            }
+        }
+        else
+        {
+            alert("you entered wrong email/ this account does not exist");
+
+        }
+
+    </script>
+
+</body>
+
+</html>
