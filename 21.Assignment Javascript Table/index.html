@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      button {
+        outline: none;
+  border: none;
+  width: 10%;
+  height: 35px;
+  background-color: skyblue;
+  margin-top: 3px;
+  font-size: 15px;
+  margin-left: 15px;
+  border-radius: 15px;
+      }
+      p{
+        color: #27186b;
+      }
+     
+    </style>
+   
+  </head>
+  <body>
+    Enter the number : <input id="number" />
+
+    <button onclick="addNumbers()">Print table</button>
+    <table id="result" border="10" cellspacing = "10">
+      <tbody>
+      <tr>
+       ...
+      </tr>
+    </tbody>
+  </body>
+  <script>
+    function addNumbers() {
+      let number;
+      let result = "";
+
+      //number = Number(document.getElementById("number").value);
+      number = Number(document.querySelector("#number").value);
+
+      for(let i = 1; i<= 11; i++){
+       // result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
+       result = result + number + "*" + i + "=" +number*i+"<br>";
+      }
+
+      document.querySelector("#result").innerHTML = result;
+    }
+  </script>
+</html>
