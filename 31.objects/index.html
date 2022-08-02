@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Es6 object</h1>
+    <script>
+        // let arr = [2,4,5,,6,7,8];
+        // //JAVA script object notation
+        // //JSON
+        // let student = {
+        //     name:"john",
+        //     age : 30,
+        //     isAdmin: true,
+        //     courses: ["html","css","js",{name:"abc"}],
+        //      isMarried: false,  
+        //      book:{
+        //         name: "c++",
+        //         comapny: "IT"
+
+        //      }   
+            
+        //     };
+        //      console.log(student.name);
+        //      console.log(arr[0]);
+        //      console.log(student.isAdmin);
+        //      console.log(student);
+        //      console.log(student.courses[0]);
+        //      console.log(student.courses[1]);
+        //      console.log(student.courses[2]);
+        //      console.log(student.courses[3]);
+        //      console.log(student.book);
+        //      console.log(student.book.name);
+
+        //////////////////
+        // let student = {
+        //     name:"john",
+        //     age : 30,
+        //     isAdmin: true,
+        //     courses: ["html","css","js",{name:"abc"}],
+        //      isMarried: false,  
+        //      book:{
+        //         name: "c++",
+        //         comapny: "IT"
+
+        //      }   
+            
+        //     };
+        //     console.log("Befor",student);
+        //     student.name = "malik";
+        //     student.age = 28;
+        //     student.courses[0]="html5";
+        //     student.courses[2]="es6"
+        //     console.log("after",student);
+        /////////////////
+        //////cloning object
+        let person = {
+            name:"malik",
+            age:28,
+            isAdmin:true,
+            courses:["html","css","js"],
+        }
+       // let personcopy = person; //reference copy
+    //    let personcopy = {...person}; //normal coloning
+    //deep coloning
+    let stringForm = JSON.stringify(person);
+    let personcopy = JSON.parse(stringForm);
+        personcopy.name = "john";
+        person.age = 30;
+        person.courses[0]="html5";
+        console.log(person);
+        console.log(personcopy);
+    </script>
+   
+</body>
+</html>

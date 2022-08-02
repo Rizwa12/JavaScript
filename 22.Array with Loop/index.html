@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   </head>
+  <body>
+    <h1>For LOOP with Array</h1>
+    <script>
+        // let myArr=[2,3,1,2,4,6,7,8];
+        // console.log("Array length:",myArr.length);
+        // for(let i=0;i<myArr.length;i++)
+        // {
+        //     console.log(myArr[i]);
+        // }
+        ////////////
+        // let i =0;
+        // for(; ;) //all parameters of for loop are optional
+        // {
+        //     if(i>9)
+        //     {
+        //         break;
+        //     }
+        //     console.log(i);
+        //     i++;
+        // }
+        // let myArr=[2,3,1,2,4,6,7,8];
+        // let newArr=  myArr.map((eachvalue,index)=>{
+        //     console.log(`${index}:${eachvalue}`);
+        //     //return eachvalue * 2;
+        //     if(eachvalue%2==0)
+        //     {
+        //         return eachvalue*2;
+        //     }
+        //     else
+        //     {
+        //         return 0;
+        //     }
+
+        // });
+        // console.log("orignial array:",myArr);
+        // console.log("new array:",newArr);
+        let sum = 0;
+        // let percentage;
+
+        // let subjectmarks = [80,70,90,100,60,90,80,90,100,80];
+        // subjectmarks.map((marks,subject)=>{
+        //     console.log(`${"subject"+subject}:${marks}`);
+            
+        //   sum = sum+marks;   
+            
+        // })
+        // percentage = sum*100/1000;
+        // document.write("Obtained marks: ",sum);
+        // document.write("<br>");
+        // document.write("Percentage: ",percentage);
+        let subjectmarks = [80,70,90,100,60,90,80,90,100,80];
+        let totalmarks = subjectmarks.length*100;
+        //sum all items of array
+        let obtainedmarks = subjectmarks.reduce(reducerFunction,0);
+        function reducerFunction(previousvalue,currentvalue)
+        {
+            return previousvalue+currentvalue;
+        }
+        console.log("obtained marks:",obtainedmarks);
+        console.log("Total marks:",totalmarks);
+
+    </script>
+   </body>
+</html>

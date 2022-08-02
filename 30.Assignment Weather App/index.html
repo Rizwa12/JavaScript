@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <style>
+     * {
+    padding: 0;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    /* vertically */
+    justify-content: center;
+    /* horizontally */
+    width: 1000px;
+    margin: 10px;
+    font-size: 40px;
+    color: white;
+}
+
+#search {
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px grey;
+}
+@media only screen and (max-width: 768px) {
+    main {
+    width: 80%;
+    height: 60vh;
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+ .row {
+    display: flex;
+    align-items: center;
+    /* vertically */
+    justify-content: center;
+    /* horizontally */
+    width: 300px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+#search {
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 5px grey;
+} 
+}
+
+      </style>
+    
+</head>
+   
+<body>
+  <main>
+    <div class="row" style="text-align: center;">
+        <form action="">
+            <input type="search" id="search" placeholder="Search by city name">
+        </form>
+    </div>
+    <div class="row" id="weather">
+        <!-- <div>
+            <img src="https://openweathermap.org/img/wn/04n@2x.png" alt="">
+        </div>
+        <div>
+            <h2>32 ℃</h2>
+            <h4> Clear </h4>
+        </div> -->
+    </div>
+</main>
+    <!-- <h1>Weather App</h1>
+    <form onsubmit="getWeather(); return false">
+        <label for="cityName">Enter City Name</label>
+        <input type="text" name="" id ="cityName">
+        <button type="submit">Get weather Data</button>
+    </form>
+    <div id ="result">
+
+    </div> -->
+
+
+    <!-- f9337ac5aaf045b89c865410223107 -->
+    <Script>
+    
+
+const API_KEY = `3265874a2c77ae4a04bb96236a642d2f`
+const form = document.querySelector("form")
+const search = document.querySelector("#search")
+const weather = document.querySelector("#weather")
+    // const API = `https://api.openweathermap.org/data/2.5/weather?
+    // q=${city}&appid=${API_KEY}&units=metric`
+    // const IMG_URL = `https: //openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+const getWeather = async(city) => {
+    weather.innerHTML = `<h2> Loading... <h2>`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+    const response = await fetch(url);
+    const data = await response.json()
+   // console.log(data);
+    
+   return showWeather(data)
+}
+const showWeather = (data) =>{
+    if (data.cod == "404") {
+         weather.innerHTML = `<h2> City Not Found <h2>`
+        return;
+    }
+    weather.innerHTML = ` <div>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
+        </div>
+        <div>
+            <h2>${data.main.temp} ℃</h2>
+            <h4>${data.weather[0].main} </h4>
+        </div> `
+
+}
+
+// const showWeather = (data) => {
+//     if (data.cod == "404") {
+//         weather.innerHTML = `<h2> City Not Found <h2>`
+//         return;
+//     }
+//     weather.innerHTML = `
+//         <div>
+//             <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
+//         </div>
+//         <div>
+//             <h2>${data.main.temp} ℃</h2>
+//             <h4> ${data.weather[0].main} </h4>
+//         </div>
+//     `
+// }
+
+form.addEventListener(
+    "submit",
+    function(event) {
+        getWeather(search.value)
+        event.preventDefault();
+    }
+)
+
+
+
+//         //function getWeather()
+//         {
+
+//           // let form = document.querySelector("form");
+//           // let search = document.querySelector("#cityName").value;
+//           // let weather = document.querySelector("weather");
+
+//             //let cityName = document.getElementById("cityName").value;
+
+//         //const axios = require('axios').default;
+
+// // Make a request for a user with a given ID
+// axios.get(`https://api.weatherapi.com/v1/current.json?key=f9337ac5aaf045b89c865410223107&q=${cityName}&aqi=no`)
+//   .then(function (response) {
+//     let weatherdata = response.data;
+//     // handle success
+//     console.log(weatherdata);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+// //   .then(function () {
+// //     // always executed
+// //   });
+// }
+    </Script>
+
+    
+
+
+</body>
+
+</html>

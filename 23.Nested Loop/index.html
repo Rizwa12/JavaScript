@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+   
+</head>
+<body>  
+    <h3>Nested Loop</h3>
+   
+  
+<script>
+//   let matrix = [[1,2,3],[4,5,6],[7,8,9]];
+//   for(let i=0;i<3;i++)
+//   {
+   
+//     for(let j=0;j<3;j++)
+//   {
+//     console.log(i,j);
+//     console.log("matrix",matrix[i][j]);
+//     matrix[i][j] = matrix[i][j]*2;
+
+//   }
+//   }
+//  console.log(matrix);
+//matrix sum
+let matrix1 =[[1,2,3],[4,5,6],[7,8,9]];
+let matrix2 = [[11,12,13],[14,15,16],[17,18,19]];
+let result = [[],[],[]];
+for(let i =0;i<matrix1.length;i++)
+{
+  for(let j =0;j<matrix2.length;j++)
+  {
+    // if(result[i]===undefined )
+    // {
+    //   result[i]=[];
+    // }
+    result[i][j] = matrix1[i][j] + matrix2[i][j];
+  }
+}
+console.log("result:",result);
+
+</script>
+
+</body>
+
+</html>
