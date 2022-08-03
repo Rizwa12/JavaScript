@@ -23,6 +23,7 @@
     <div id="result">
 
     </div>
+   
 
     <script>
         function getWeather() {
@@ -33,10 +34,17 @@
                 .then(function (response) {
 
                     let weatherData = response.data;
+                   // document.querySelector("#result").innerHTML=weatherData.current.humidity;
+                   // document.querySelector("#result").innerHTML=weatherData.location.country;
+                  // document.querySelector("#result").innerHTML=weatherData.current.condition.text;
+                //   <img src="//cdn.weatherapi.com/weather/64x64/night/116.png${weatherData.current.condition.icon}@2x.png" alt="">
+                   //document.querySelector("#result").innerHTML=weatherData.current.condition.icon;
+                   document.querySelector("#result").innerHTML=weatherData.location.localtime;
+
 
                     console.log(weatherData);
-                    console.log(weatherData.current.humidity);
-                    console.log(weatherData.current.temp_c);
+                    //console.log(weatherData.current.humidity);
+                    //console.log(weatherData.current.temp_c);
 
                     console.log(weatherData.location.name);
                 })
