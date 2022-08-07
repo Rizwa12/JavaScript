@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"> -->
+        </script>
+
+</head>
+
+<body>
+
+    <h1>Weather App</h1>
+
+    <form onsubmit="getWeather(); return false">
+        <label for="cityName">Enter city name:</label>
+        <input required type="text" name="" id="cityName">
+
+        <button type="submit">Get Weather Data</button>
+    </form>
+
+    <div id="result">
+
+    </div>
+    <div id="row">
+        <!-- <div>
+            <img src="https://cdn.weatherapi.com/weather/64x64/day/116.png";
+            
+           </div>  -->
+
+    </div>
+
+
+
+
+    <script>
+        function getWeather() {
+
+            let cityName = document.getElementById("cityName").value;
+
+            //axios.get(`http://localhost:4000/weather`)
+            axios.get(`https://myweatherapp-online123.herokuapp.com/weather`)
+                .then(function (response) {
+                    let data = response.data;
+                    console.log(data);
+                    document.querySelector("#result").innerHTML = data.temperature;
+
+
+    //                 let weatherData = response.data;
+    //                 // document.querySelector("#result").innerHTML=weatherData.current.humidity;
+    //                 // document.querySelector("#result").innerHTML=weatherData.location.country;
+    //                 // document.querySelector("#result").innerHTML=weatherData.current.condition.text;
+    //                 //   <img src="//cdn.weatherapi.com/weather/64x64/night/116.png${weatherData.current.condition.icon}@2x.png" alt="">
+    //                 //document.querySelector("#result").innerHTML=weatherData.current.condition.icon;
+    //                 document.querySelector("#result").innerHTML = weatherData.current.condition.text;
+
+    //                 // "//cdn.weatherapi.com/weather/64x64/day/116.png"
+    //                 console.log(weatherData);
+    //                 //console.log(weatherData.current.humidity);
+    //                 //console.log(weatherData.current.temp_c);
+    //                 document.querySelector("#row").innerHTML = ` <div>
+    //          <img src="https:${weatherData.current.condition.icon}">
+    //  </div>`
+    //  let time = weatherData.location.localtime;
+    //  let formattedtime = moment(time).format("Do MMMM  YYYY, h:mm:ss a")
+    //  console.log("Time:",formattedtime);
+    //  //fromnow
+    //  //let fromNow = moment("1 august 2022").fromNow();
+    //  let fromNow = moment("1 august 2021").fromNow();
+    //  console.log("FromNow:",fromNow);
+
+
+
+
+              // console.log(weatherData.location.name);
+                })
+                .catch(function (error) {
+                    // handle error
+                console.log(error);
+                })
+
+        }
+    </script>
+
+
+
+
+
+</body>
+
+</html>
